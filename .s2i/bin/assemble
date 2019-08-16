@@ -7,7 +7,7 @@
 echo 'Adding start script to package.json using REDIS_HOST, REDIS_PORT, and REDIS_PASSWORD env vars...'
 if grep -Fxq '"scripts": {' /tmp/src/package.json
 then
-    sed -i '/"scripts": {/a \    "start": "node ./bin/redis-commander --redis-port ${REDIS_PORT} --redis-host ${REDIS_HOST} --redis-password ${REDIS_PASSWORD} --port 8080",' package.json
+    sed -i '/"scripts": {/a \    "start": "node ./bin/redis-commander --redis-port ${REDIS_PORT} --redis-host ${REDIS_HOST} --redis-password ${REDIS_PASSWORD} --port 8080",' /tmp/src/package.json
 else
     sed -i 's?"preferGlobal?"scripts": {"start": "node ./bin/redis-commander --redis-port ${REDIS_PORT} --redis-host ${REDIS_HOST} --redis-password ${REDIS_PASSWORD} --port 8080"},\n  "preferGlobal?' /tmp/src/package.json
 fi
