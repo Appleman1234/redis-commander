@@ -11,6 +11,7 @@ then
 else
     sed -i 's?"preferGlobal?"scripts": {"start": "node ./bin/redis-commander --redis-port ${REDIS_PORT} --redis-host ${REDIS_HOST} --redis-password ${REDIS_PASSWORD} --port 8080"},\n  "preferGlobal?' /tmp/src/package.json
 fi
+cat /tmp/src/package.json
 # Execute the default S2I script
 source ${STI_SCRIPTS_PATH}/assemble
 
